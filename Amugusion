@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>سایت شخصی علی</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1d4ed8, #06b6d4);
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: #e5e7eb;
+            margin-left: 16px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-title {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        .hero-actions button {
+            border: none;
+            border-radius: 8px;
+            padding: 10px 18px;
+            margin-left: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #e5e7eb;
+            border: 1px solid #4b5563;
+        }
+
+        .card {
+            background: #020617;
+            border-radius: 14px;
+            padding: 22px 20px;
+            border: 1px solid #1f2937;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #0b1120;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 12px;
+            border: 1px solid #1f2937;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .mini-card {
+            background: #020617;
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid #111827;
+            font-size: 13px;
+        }
+
+        .mini-title {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .mini-text {
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .field {
+            display: grid;
+            gap: 4px;
+            font-size: 13px;
+        }
+
+        input, textarea {
+            background: #020617;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 8px 10px;
+            color: #e5e7eb;
+            font-size: 13px;
+        }
+
+        input:focus, textarea:focus {
+            outline: 1px solid #2563eb;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        footer {
+            border-top: 1px solid #1f2937;
+            padding: 16px 20px 26px;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <div class="nav-title">علی | طراح سایت</div>
+        <div class="nav-links">
+            <a href="#about">درباره من</a>
+            <a href="#skills">مهارت‌ها</a>
+            <a href="#projects">نمونه‌کار</a>
+            <a href="#contact">تماس</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <!-- بخش بالای صفحه -->
+    <section class="hero" id="about">
+        <div>
+            <h1 class="hero-title">سلام، من علی هستم.</h1>
+            <p class="hero-subtitle">
+                این یک سایت آزمایشی ساده است که برای تست طراحی شده.
+                می‌توانی بعداً متن‌ها، رنگ‌ها و بخش‌ها را مطابق سلیقه‌ات عوض کنی.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    شروع همکاری
+                </button>
+                <button class="btn-outline" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+                    دیدن نمونه‌کار
+                </button>
+            </div>
+        </div>
+        <div>
+            <div class="card">
+                <h2 class="section-title">خلاصه من</h2>
+                <p class="section-subtitle">
+                    طراح و توسعه‌دهنده وب، علاقه‌مند به رابط کاربری ساده، تمیز و قابل‌فهم.
+                </p>
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مهارت‌ها -->
+    <section id="skills" style="margin-bottom: 40px;">
+        <h2 class="section-title">مهارت‌ها</h2>
+        <p class="section-subtitle">
+            این‌ها فقط مثال هستند. می‌توانی بسته به تخصص واقعی خودت عوضشان کنی.
+        </p>
+        <div class="grid-3">
+            <div class="mini-card">
+                <div class="mini-title">Front-end</div>
+                <div class="mini-text">
+                    طراحی رابط‌های کاربری واکنش‌گرا با تمرکز روی تجربه کاربری روان و مرتب.
+                </div>
+            </div>
+            <div class="mini-card">
+                <div class="mini-title">UI / UX</div>
+                <div class="mini-text">
+                    انتخاب رنگ، چیدمان المان‌ها و طراحی ساده برای درک سریع محتوا.
+                </div>
+            </div>
+            <div class="mini-card">
+                <div class="mini-title">Performance</div>
+                <div class="mini-text">
+                    صفحات سبک، قابل‌دسترسی و سازگار با موبایل و دسکتاپ.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نمونه کار -->
+    <section id="projects" style="margin-bottom: 40px;">
+        <h2 class="section-title">نمونه‌کارها</h2>
+        <p class="section-subtitle">
+            فعلاً نمونه‌کارها فرضی هستند، اما می‌توانند جایگزین پروژه‌های واقعی تو شوند.
+        </p>
+        <div class="grid-3">
+            <div class="mini-card">
+                <div class="mini-title">سایت شخصی</div>
+                <div class="mini-text">
+                    طراحی وب‌سایت مینیمال برای معرفی فردی، مهارت‌ها و راه‌های تماس.
+                </div>
+            </div>
+            <div class="mini-card">
+                <div class="mini-title">صفحه فرود</div>
+                <div class="mini-text">
+                    لندینگ‌پیج برای معرفی یک محصول یا دوره آموزشی با تمرکز روی تبدیل کاربر.
+                </div>
+            </div>
+            <div class="mini-card">
+                <div class="mini-title">وبلاگ ساده</div>
+                <div class="mini-text">
+                    ساخت وبلاگ تمیز و سبک برای انتشار نوشته‌ها و مقالات.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تماس -->
+    <section id="contact">
+        <h2 class="section-title">تماس با من</h2>
+        <p class="section-subtitle">
+            این فرم صرفاً نمایشی است. برای واقعی شدن، باید به بک‌اند یا سرویس ایمیل وصل شود.
+        </p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('این فقط یک فرم نمایشی است 🙂');">
+            <div class="field">
+                <label for="name">نام</label>
+                <input id="name" type="text" placeholder="نام شما">
+            </div>
+            <div class="field">
+                <label for="email">ایمیل</label>
+                <input id="email" type="email" placeholder="ایمیل شما">
+            </div>
+            <div class="field">
+                <label for="message">پیام</label>
+                <textarea id="message" placeholder="متن پیام شما..."></textarea>
+            </div>
+            <button class="btn-primary" type="submit">ارسال پیام</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    ساخته شده برای تست طراحی سایت – قابل ویرایش و توسعه
+</footer>
+
+</body>
+</html>
